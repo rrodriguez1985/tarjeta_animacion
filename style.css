@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #9077ff 0%, #9b7aff 0%, #8e7fff 21%, #9c85f9 52%, #9055cf 78%, #6b2ab1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    border-radius: 8px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .4);
+    transition: 1s;
+}
+
+.card:hover {
+    transform: translateX(50%);
+    border-radius: 8px;
+}
+
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .4);
+    z-index: 10;
+    transition: 1s;
+    border-radius: 8px;
+}
+
+.card:hover .imgBox {
+    transform: rotateY(-180deg);
+    border-radius: 8px;
+}
+
+img {
+    width: 639px;
+    height: 798px;
+    border-radius: 8px;
+}
+
+.imgBox img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.imgBox img:nth-child(2) {
+    /*nth-child(x) nos permite seleccionar varios elementos hijos de la
+    clase indicando su posición según el argumento o fórmula indicada.*/
+    transform: rotateY(-180deg);
+}
+
+.details {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*Propiedad de CSS Grid.Define el ancho de la canalización que separa
+    las líneas de la rejilla en relación con la dimensión del elemento*/
+    gap: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+span {
+    color: #6b2ab1;
+    font-size: 26px;
+}
+
+.social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons a {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.social-icons a:hover {
+    background-color: #6b2ab1;
+}
+
+.social-icons a i {
+    color: white;
+}
